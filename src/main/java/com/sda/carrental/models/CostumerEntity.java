@@ -8,7 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 @Data
-@Table(name = "rental")
+@Table(name = "costumer")
 @NoArgsConstructor
 @AllArgsConstructor
 @jakarta.persistence.Entity
@@ -32,7 +32,7 @@ public class CostumerEntity {
     @Column(name= "adress")
     private String adress;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "costumerEntity")
-    private List<ReservationEntity> reservationEntities;
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "costumerEntity")
+//    private List<ReservationEntity> reservationEntities;
 
 }

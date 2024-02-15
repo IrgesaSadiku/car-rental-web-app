@@ -8,7 +8,7 @@ import java.util.Date;
 @Getter
 @Setter
 @Data
-@Table(name = "branch")
+@Table(name = "revenue")
 @NoArgsConstructor
 @AllArgsConstructor
 @jakarta.persistence.Entity

@@ -6,7 +6,7 @@ import lombok.*;
 @Getter
 @Setter
 @Data
-@Table(name = "rental")
+@Table(name = "car")
 @NoArgsConstructor
 @AllArgsConstructor
 @jakarta.persistence.Entity
