@@ -3,6 +3,8 @@ package com.sda.carrental.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Data
@@ -26,5 +28,8 @@ public class BranchEntity {
     @ManyToOne( fetch = FetchType.EAGER)
     @JoinColumn(name = "rental_id", nullable = false)
     private RentalEntity rentalEntity;
+
+    @OneToMany(cascade=CascadeType.ALL, fetch= FetchType.EAGER, mappedBy = "branchEntity")
+    private List<RevenueEntity> revenueEntities;
 
 }
