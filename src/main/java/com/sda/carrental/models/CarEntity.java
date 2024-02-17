@@ -3,6 +3,8 @@ package com.sda.carrental.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Data
@@ -31,6 +33,10 @@ public class CarEntity {
 
     @Column(name= "status")
     private String status;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "costumerEntity")
+    @JoinColumn(name="costumer_id", nullable = false)
+    private List<BranchEntity> costumerEntities;
 
 
 }
