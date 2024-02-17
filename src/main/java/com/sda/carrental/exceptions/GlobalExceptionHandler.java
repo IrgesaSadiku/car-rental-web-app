@@ -8,18 +8,14 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
     public class GlobalExceptionHandler {
-        @ExceptionHandler(value = {BranchNotFoundException.class})
-        @ResponseStatus(HttpStatus.NOT_FOUND)
-
-
-        public ResponseEntity<String> handleOrdersNotFound(BranchNotFoundException ex) {
-            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
+    @ExceptionHandler(value = {BranchNotFoundException.class})
+        public ResponseEntity<String> handleBranchNotFound(BranchNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
-
-        @ExceptionHandler(value = {CostumerNotFoundException.class})
-        public ResponseEntity<String> handleUsersNotFound(CostumerNotFoundException ex) {
-            return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
-        }
+    @ExceptionHandler(value = {CostumerNotFoundException.class})
+    public ResponseEntity<String> handleCostumerNotFound(CostumerNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    }
     }
 
 
