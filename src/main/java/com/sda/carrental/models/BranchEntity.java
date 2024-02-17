@@ -25,6 +25,9 @@ public class BranchEntity {
     @Column(name= "city")
     private String city;
 
+    @OneToMany(cascade=CascadeType.ALL, fetch= FetchType.EAGER, mappedBy = "branchEntity")
+    private List<ReservationEntity> reservationEntities;
+
     @ManyToOne( fetch = FetchType.EAGER)
     @JoinColumn(name = "rental_id", nullable = false)
     private RentalEntity rentalEntity;

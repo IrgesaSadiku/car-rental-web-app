@@ -23,9 +23,13 @@ public class ReservationEntity {
     @Column(name="revenue_amount")
     private Integer revenue_amount;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="branch_id", nullable = false)
     private BranchEntity branchEntity;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="car_id", nullable = false)
+    private CarEntity carEntity;
 
 
 }

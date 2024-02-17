@@ -34,9 +34,8 @@ public class CarEntity {
     @Column(name= "status")
     private String status;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "costumerEntity")
-    @JoinColumn(name="costumer_id", nullable = false)
-    private List<BranchEntity> costumerEntities;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "carEntity")
+    private List<ReservationEntity> reservationEntities;
 
 
 }
