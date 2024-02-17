@@ -16,6 +16,22 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
     public ResponseEntity<String> handleCostumerNotFound(CostumerNotFoundException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(value = {CarNotFoundException.class})
+    public ResponseEntity<String> handleCarNotFound(CarNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    }
+    @ExceptionHandler(value = {RentalNotFoundException.class})
+    public ResponseEntity<String> handleRentalNotFound(RentalNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    }
+    @ExceptionHandler(value = {ReservationNotFoundException.class})
+    public ResponseEntity<String> handleReservationNotFound(ReservationNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    }
+    @ExceptionHandler(value = {RevenueNotFoundException.class})
+    public ResponseEntity<String> handleRevenueNotFound(RevenueNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+    }
     }
 
 

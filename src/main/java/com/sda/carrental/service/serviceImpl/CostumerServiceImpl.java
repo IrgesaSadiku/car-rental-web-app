@@ -14,18 +14,18 @@ public class CostumerServiceImpl implements CostumerServiceInterface {
     @Autowired
     CostumerRepository costumerRepository;
     @Override
-    public CostumerEntity createCostumer(CostumerEntity costumer) {
+    public  CostumerEntity createCostumer(CostumerEntity costumer) {
         return costumerRepository.save(costumer);
     }
 
     @Override
-        public Optional<CostumerEntity> getCostumer(Integer costumerId){
+        public  Optional<CostumerEntity> getCostumer(Integer costumerId){
             return Optional.ofNullable(costumerRepository.findById(costumerId)
                     .orElseThrow(()-> new CostumerNotFoundException("Costumer not found with this:" + costumerId)));
 
         }
         @Override
-        public CostumerEntity updateCostumer(CostumerEntity costumer, Integer costumerId) {
+        public  CostumerEntity updateCostumer(CostumerEntity costumer, Integer costumerId) {
             if(!costumerRepository.existsById(costumerId)){
                 throw new BranchNotFoundException((" You can not update this costumer because it does not exist"));
             }
@@ -36,7 +36,7 @@ public class CostumerServiceImpl implements CostumerServiceInterface {
         }
 
         @Override
-        public void deleteCostumer(Integer costumerId) {
+        public  void deleteCostumer(Integer costumerId) {
             costumerRepository.deleteById(costumerId);
         }
     }
