@@ -1,5 +1,4 @@
 package com.sda.carrental.service.serviceImpl;
-import com.sda.carrental.exceptions.BranchNotFoundException;
 import com.sda.carrental.exceptions.CostumerNotFoundException;
 
 
@@ -7,9 +6,10 @@ import com.sda.carrental.models.CostumerEntity;
 import com.sda.carrental.repository.CostumerRepository;
 import com.sda.carrental.service.CostumerServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
-
+@Service
 public class CostumerServiceImpl implements CostumerServiceInterface {
     @Autowired
     CostumerRepository costumerRepository;
@@ -27,7 +27,7 @@ public class CostumerServiceImpl implements CostumerServiceInterface {
         @Override
         public  CostumerEntity updateCostumer(CostumerEntity costumer, Integer costumerId) {
             if(!costumerRepository.existsById(costumerId)){
-                throw new BranchNotFoundException((" You can not update this costumer because it does not exist"));
+                throw new CostumerNotFoundException((" You can not update this costumer because it does not exist"));
             }
             Optional<CostumerEntity> costumerEntity = costumerRepository.findById(costumerId);
             costumerEntity.get().setFirstname(costumer.getFirstname());
