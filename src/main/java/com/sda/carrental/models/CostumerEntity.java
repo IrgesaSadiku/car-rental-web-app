@@ -3,8 +3,6 @@ package com.sda.carrental.models;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Getter
 @Setter
 @Data
@@ -19,17 +17,17 @@ public class CostumerEntity {
     private Integer costumer_id;
 
 
-    @Column(name= "Firstname")
+    @Column(name = "Firstname")
     private String Firstname;
 
-    @Column(name= "Lastname")
+    @Column(name = "Lastname")
     private String Lastname;
 
-    @Column(name= "email")
+    @Column(name = "email")
     private String email;
 
 
-    @Column(name= "adress")
+    @Column(name = "adress")
     private String adress;
 
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "costumerEntity")

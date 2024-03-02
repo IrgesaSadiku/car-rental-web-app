@@ -15,7 +15,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class CostumerContrroller {
     @Autowired
-    private  CostumerServiceImpl costumerService;
+    private CostumerServiceImpl costumerService;
 
 
     @PostMapping("/createCostumers")
@@ -41,6 +41,7 @@ public class CostumerContrroller {
         costumerService.deleteCostumer(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
 
 }
 

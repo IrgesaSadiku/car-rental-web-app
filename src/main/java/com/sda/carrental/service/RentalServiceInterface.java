@@ -7,7 +7,7 @@ import java.util.Optional;
 public interface RentalServiceInterface {
     RentalEntity createRental(RentalEntity rental);
 
-    Optional<RentalEntity> getrental(Integer rentalId);
+    Optional<RentalEntity> getRental(Integer rentalId);
 
     RentalEntity updateRental(RentalEntity rental, Integer rentalId);
 

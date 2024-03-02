@@ -17,13 +17,13 @@ public class RevenueEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @jakarta.persistence.Column(name = "revenue_id")
     private Integer revenue_id;
-    @Column(name="return_date")
+    @Column(name = "return_date")
     private Date return_date;
-    @Column(name="revenue_amount")
+    @Column(name = "revenue_amount")
     private Date revenue_amount;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="branch_id", nullable = false)
+    @JoinColumn(name = "branch_id", nullable = false)
     private BranchEntity branchEntity;
 
 

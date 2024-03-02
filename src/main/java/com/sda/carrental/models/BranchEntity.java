@@ -19,20 +19,20 @@ public class BranchEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @jakarta.persistence.Column(name = "branch_id")
     private Integer branch_id;
-    @Column(name= "address")
+    @Column(name = "address")
     private String address;
 
-    @Column(name= "city")
+    @Column(name = "city")
     private String city;
 
-    @OneToMany(cascade=CascadeType.ALL, fetch= FetchType.EAGER, mappedBy = "branchEntity")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "branchEntity")
     private List<ReservationEntity> reservationEntities;
 
-    @ManyToOne( fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "rental_id", nullable = false)
     private RentalEntity rentalEntity;
 
-    @OneToMany(cascade=CascadeType.ALL, fetch= FetchType.EAGER, mappedBy = "branchEntity")
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "branchEntity")
     private List<RevenueEntity> revenueEntities;
 
 }

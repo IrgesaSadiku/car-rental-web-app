@@ -19,19 +19,19 @@ public class CarEntity {
     private Integer car_id;
 
 
-    @Column(name= "brand")
+    @Column(name = "brand")
     private String brand;
 
-    @Column(name= "model")
+    @Column(name = "model")
     private String model;
 
-    @Column(name= "year")
+    @Column(name = "year")
     private Integer year;
 
-    @Column(name= "color")
+    @Column(name = "color")
     private String color;
 
-    @Column(name= "status")
+    @Column(name = "status")
     private String status;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "carEntity")

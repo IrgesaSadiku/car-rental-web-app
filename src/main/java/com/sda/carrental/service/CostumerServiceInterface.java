@@ -1,9 +1,10 @@
 package com.sda.carrental.service;
+
 import com.sda.carrental.models.CostumerEntity;
 
 import java.util.Optional;
 
-public interface CostumerServiceInterface  {
+public interface CostumerServiceInterface {
     CostumerEntity createCostumer(CostumerEntity costumer);
 
     Optional<CostumerEntity> getCostumer(Integer costumerId);

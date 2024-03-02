@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RentalRepository extends JpaRepository<RentalEntity, Integer> {
+//    @Query("SELECT DISTINCT r.customerEntity FROM RentalEntity r")
+//    List<CostumerEntity> findAllCustomers();
 }

@@ -20,15 +20,15 @@ public class RentalEntity {
     private Integer rental_id;
 
 
-    @Column(name= "name")
+    @Column(name = "name")
     private String name;
 
 
-    @Column(name= "email")
+    @Column(name = "email")
     private String email;
 
 
-    @Column(name= "owner")
+    @Column(name = "owner")
     private String owner;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "rentalEntity")
